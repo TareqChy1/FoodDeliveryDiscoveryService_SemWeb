@@ -1,0 +1,125 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Define a NodeShape for ProfessionalService
+schema:ServiceShape
+    a sh:NodeShape ;
+    sh:targetClass schema:ProfessionalService ;
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:openingHoursSpecification ;
+        sh:node schema:OHSShape ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:location ;
+        sh:node schema:LocationShape ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:priceSpecification ;
+        sh:node schema:PriceSpecificationShape ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:telephone ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
+
+# Define a NodeShape for OpeningHoursSpecification
+schema:OHSShape
+    a sh:NodeShape ;
+    sh:property [
+        sh:path schema:closes ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:opens ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:dayOfWeek ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 7 ;
+        sh:nodeKind sh:Literal ;
+    ] .
+
+# Define a NodeShape for Location
+schema:LocationShape
+    a sh:NodeShape ;
+    sh:property [
+        sh:path schema:latitude ;
+        sh:datatype xsd:decimal ;  # Changed from xsd:double to xsd:decimal
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive -90.0 ;
+        sh:maxInclusive 90.0 ;
+    ] ;
+    sh:property [
+        sh:path schema:longitude ;
+        sh:datatype xsd:decimal ;  # Changed from xsd:double to xsd:decimal
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive -180.0 ;
+        sh:maxInclusive 180.0 ;
+    ] ;
+    sh:property [
+        sh:path schema:address ;
+        sh:node schema:AddressShape ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
+
+# Define a NodeShape for PriceSpecification
+schema:PriceSpecificationShape
+    a sh:NodeShape ;
+    sh:property [
+        sh:path schema:deliveryChargePrice ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:eligibleTransactionVolume ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:priceCurrency ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
+
+# Define a NodeShape for Address
+schema:AddressShape
+    a sh:NodeShape ;
+    sh:property [
+        sh:path schema:addressCountry ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:addressLocality ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .

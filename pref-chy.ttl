@@ -1,0 +1,24 @@
+@prefix schema: <http://schema.org/> .
+
+<#customertareq>
+    a schema:Person ;
+    schema:name "Tareq Md Rabiul Hossain CHY" ;
+    schema:seeks [
+        schema:availabilityStarts "11:40" ;
+        schema:availableAtOrFrom [
+            schema:geoWithin [
+                a schema:GeoCircle ;
+                schema:geoMidpoint [
+                    schema:latitude 47.3 ;
+                    schema:longitude 2.8
+                ] ;
+                schema:geoRadius 100
+            ]
+        ] ;
+        schema:dayOfWeek "Friday" ;
+        schema:priceSpecification [
+            a schema:PriceSpecification ;
+            schema:maxPrice 15 ;
+            schema:priceCurrency "EUR"
+        ]
+    ] .

@@ -1,0 +1,28 @@
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies> a schema:ProfessionalService ;
+    schema:location <https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#location> ;
+    schema:name "DZ'envies" ;
+    schema:openingHoursSpecification <https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#openingHoursSpecification> ;
+    schema:priceSpecification <https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#priceSpecification> ;
+    schema:telephone "+33380500926" .
+
+<https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#address> a schema:PostalAddress ;
+    schema:addressCountry "FR" ;
+    schema:addressLocality "Dijon" .
+
+<https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#location> a schema:Place ;
+    schema:address <https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#address> ;
+    schema:latitude 47.3238 ;
+    schema:longitude 5.0394 .
+
+<https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#openingHoursSpecification> a schema:OpeningHoursSpecification ;
+    schema:closes "1970-01-01T14:00:00"^^xsd:dateTime ;
+    schema:dayOfWeek "['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']" ;
+    schema:opens "1970-01-01T11:30:00"^^xsd:dateTime .
+
+<https://a2roo.coopcycle.org/fr/restaurant/11-dz-envies#priceSpecification> a schema:PriceSpecification ;
+    schema:deliveryChargePrice 4.9000 ;
+    schema:eligibleTransactionVolume 15.0000 ;
+    schema:priceCurrency "EUR" .
