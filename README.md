@@ -48,7 +48,7 @@ The technical requirements for the project include setting up a triplestore(Apac
    - Supports partial match queries.
 
 8. **Diverse Preferences Query: `query6.py`**
-   - Modified `query4.py` to Test with different sets of user preferences from the **Linked Data Platform Server** [Community Solid Server Workspace](http://193.49.165.77:3000/semweb/chy-workspace/pref-chy.ttl)
+   - Modified `query5.py` to Test with different sets of user preferences from the **Linked Data Platform Server** [Community Solid Server Workspace](http://193.49.165.77:3000/semweb/chy-workspace/pref-chy.ttl)
 
 9. **Enhanced Data Collection: `collectShapeValidation.py`**
    - Modified `collect.py` to validate RDF data using SHACL `shape.ttl` before storage and to collect data from any CoopCycle member.
