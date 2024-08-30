@@ -7,6 +7,17 @@ The primary goal of the Semantic Web project is to create a dynamic food deliver
 
 The technical requirements for the project include setting up a triplestore(Apache Jena Fuseki) for data storage, developing programs to collect and query data from CoopCycle, utilizing SPARQL for data querying, implementing SHACL for data validation, and creating a command-line interface for user interactions. The application must also dynamically incorporate new businesses and user preferences.
 
+## Use Case Scenario
+<p align="center">
+    <img src="img/use_case_scenario.png">
+</p>
+
+## File Structure  
+<p align="center">
+    <img src="img/file_structure.png">
+</p>
+
+
 ## Required Tools 
 
 - **Apache Jena Fuseki**: RDF data storage and SPARQL querying.
